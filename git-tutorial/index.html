@@ -1,0 +1,930 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-tw">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=6.3.0" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=6.3.0">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=6.3.0">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=6.3.0">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=6.3.0" color="#222">
+
+
+
+
+
+
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '6.3.0',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  <meta name="description" content="https://git-scm.com/ Git 教學 安裝篇下載Githttps://git-scm.com/downloads  安裝過程 next下一步到底。 安裝完成之後，可以找到 「Git Bash」">
+<meta name="keywords" content="Git,tools">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Git 教學">
+<meta property="og:url" content="http://yoursite.com/git-tutorial/index.html">
+<meta property="og:site_name" content="WuLaLa Note">
+<meta property="og:description" content="https://git-scm.com/ Git 教學 安裝篇下載Githttps://git-scm.com/downloads  安裝過程 next下一步到底。 安裝完成之後，可以找到 「Git Bash」">
+<meta property="og:locale" content="zh-tw">
+<meta property="og:updated_time" content="2018-07-16T01:54:39.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Git 教學">
+<meta name="twitter:description" content="https://git-scm.com/ Git 教學 安裝篇下載Githttps://git-scm.com/downloads  安裝過程 next下一步到底。 安裝完成之後，可以找到 「Git Bash」">
+
+
+
+
+
+
+  <link rel="canonical" href="http://yoursite.com/git-tutorial/"/>
+
+
+
+<script type="text/javascript" id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>Git 教學 | WuLaLa Note</title>
+  
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style type="text/css">
+    .use-motion .motion-element,
+    .use-motion .brand,
+    .use-motion .menu-item,
+    .sidebar-inner,
+    .use-motion .post-block,
+    .use-motion .pagination,
+    .use-motion .comments,
+    .use-motion .post-header,
+    .use-motion .post-body,
+    .use-motion .collection-title { opacity: initial; }
+
+    .use-motion .logo,
+    .use-motion .site-title,
+    .use-motion .site-subtitle {
+      opacity: initial;
+      top: initial;
+    }
+
+    .use-motion {
+      .logo-line-before i { left: initial; }
+      .logo-line-after i { right: initial; }
+    }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-tw">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">WuLaLa Note</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="Toggle navigation bar">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+    <a href="/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-home"></i> <br />Home</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-about">
+    <a href="/about/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-user"></i> <br />About</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-tags">
+    <a href="/tags/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />Tags</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-categories">
+    <a href="/categories/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-th"></i> <br />Categories</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+    <a href="/archives/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />Archives</a>
+  </li>
+
+      
+      
+    </ul>
+  
+
+  
+
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+            
+
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/git-tutorial/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="YuWin">
+      <meta itemprop="description" content="PHPer">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="WuLaLa Note">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Git 教學
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2018-07-15 17:49:35" itemprop="dateCreated datePublished" datetime="2018-07-15T17:49:35+08:00">2018-07-15</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Modified: 2018-07-16 09:54:39" itemprop="dateModified" datetime="2018-07-16T09:54:39+08:00">2018-07-16</time>
+              
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/工具/" itemprop="url" rel="index"><span itemprop="name">工具</span></a></span>
+
+                
+                
+                  , 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/工具/Local/" itemprop="url" rel="index"><span itemprop="name">Local</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p><a href="https://git-scm.com/" target="_blank" rel="noopener">https://git-scm.com/</a></p>
+<p><strong>Git 教學</strong></p>
+<h3 id="安裝篇"><a href="#安裝篇" class="headerlink" title="安裝篇"></a>安裝篇</h3><h4 id="下載Git"><a href="#下載Git" class="headerlink" title="下載Git"></a>下載<a href="https://git-scm.com/downloads" target="_blank" rel="noopener">Git</a></h4><p><a href="https://git-scm.com/downloads" target="_blank" rel="noopener">https://git-scm.com/downloads</a></p>
+<ol>
+<li>安裝過程 next下一步到底。</li>
+<li>安裝完成之後，可以找到 「Git Bash」</li>
+</ol>
+<a id="more"></a>
+<p><strong>檢查是否安裝成功</strong><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git --version</span><br></pre></td></tr></table></figure></p>
+<h3 id="設定篇"><a href="#設定篇" class="headerlink" title="設定篇"></a>設定篇</h3><h4 id="建立目錄讓Git管理"><a href="#建立目錄讓Git管理" class="headerlink" title="建立目錄讓Git管理"></a>建立目錄讓Git管理</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git init</span><br></pre></td></tr></table></figure>
+<h4 id="設定ssh-key"><a href="#設定ssh-key" class="headerlink" title="設定ssh key"></a>設定ssh key</h4><h5 id="查看ssh-key"><a href="#查看ssh-key" class="headerlink" title="查看ssh key"></a>查看ssh key</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ ls -al ~/.ssh</span><br></pre></td></tr></table></figure>
+<p>一般預設的公共密鑰文件為下列其中之一: </p>
+<ul>
+<li>id_dsa.pub</li>
+<li>id_ecdsa.pub</li>
+<li>id_ed25519.pub</li>
+<li>id_rsa.pub</li>
+</ul>
+<h5 id="產生ssh-key"><a href="#產生ssh-key" class="headerlink" title="產生ssh key"></a>產生ssh key</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ ssh-keygen -t rsa -b 4096 -C <span class="string">"GitHub email address"</span></span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>設定 SSH Key 密碼</p>
+</blockquote>
+<h5 id="複製ssh-key"><a href="#複製ssh-key" class="headerlink" title="複製ssh key"></a>複製ssh key</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ cat ~/.ssh/id_rsa.pub | pbcopy</span><br></pre></td></tr></table></figure>
+<h5 id="測試ssh"><a href="#測試ssh" class="headerlink" title="測試ssh"></a>測試ssh</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ ssh -T git@github.com</span><br></pre></td></tr></table></figure>
+<h4 id="使用者設定"><a href="#使用者設定" class="headerlink" title="使用者設定"></a>使用者設定</h4><p><strong>設定使用者的名稱與電子信箱，不然每次commit都要輸入一次。</strong><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ git config --global user.name <span class="string">"UserName"</span></span><br><span class="line">$ git config --global user.email <span class="string">"UserName@email.com"</span></span><br></pre></td></tr></table></figure></p>
+<p><strong>查看git config 設定</strong><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git config --list</span><br></pre></td></tr></table></figure></p>
+<h4 id="進階用法：不同的專案設定不同的作者"><a href="#進階用法：不同的專案設定不同的作者" class="headerlink" title="進階用法：不同的專案設定不同的作者"></a>進階用法：不同的專案設定不同的作者</h4><p><strong>a.切到該專案目錄</strong><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ git config --<span class="built_in">local</span> user.name <span class="string">"UserName"</span></span><br><span class="line">$ git config --<span class="built_in">local</span> user.email <span class="string">"UserName@email.com"</span></span><br></pre></td></tr></table></figure></p>
+<blockquote>
+<p>c.設定之後這個專案目錄就會跑local的設定檔，離開這個專案還是會跑Global。</p>
+</blockquote>
+<h4 id="更換編輯器-vim-gt-emacs"><a href="#更換編輯器-vim-gt-emacs" class="headerlink" title="更換編輯器: vim -&gt; emacs"></a>更換編輯器: vim -&gt; emacs</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git config --global core.editor emacs</span><br></pre></td></tr></table></figure>
+<h4 id="自訂指令-Alias-別名"><a href="#自訂指令-Alias-別名" class="headerlink" title="自訂指令:Alias 別名"></a>自訂指令:Alias 別名</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ git config --global alias.l <span class="built_in">log</span></span><br><span class="line">$ git config --global alias.lg <span class="string">"log --oneline --graph"</span></span><br></pre></td></tr></table></figure>
+<p>設定之後，輸入 <code>git l</code> 指令就跟 <code>git log</code> 一樣。<br>設定之後，輸入 <code>git lg</code> 指令就跟 <code>git log --oneline --graph</code> 一樣。</p>
+<h3 id="基礎篇"><a href="#基礎篇" class="headerlink" title="基礎篇"></a>基礎篇</h3><h4 id="建立-Git-專案"><a href="#建立-Git-專案" class="headerlink" title="建立 Git 專案"></a>建立 Git 專案</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git init</span><br></pre></td></tr></table></figure>
+<h4 id="提交一個-Patch"><a href="#提交一個-Patch" class="headerlink" title="提交一個 Patch"></a>提交一個 Patch</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$ git status</span><br><span class="line">$ git add &lt;file&gt;</span><br><span class="line">$ git commit</span><br><span class="line">$ git <span class="built_in">log</span></span><br><span class="line">$ git show</span><br></pre></td></tr></table></figure>
+<h4 id="新增-修改檔案"><a href="#新增-修改檔案" class="headerlink" title="新增 / 修改檔案"></a>新增 / 修改檔案</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">$ git diff</span><br><span class="line">$ git diff &lt;file&gt;</span><br><span class="line">$ git diff --cached</span><br><span class="line">$ git add -A</span><br><span class="line">$ git commit -m &lt;message&gt;</span><br><span class="line">$ git show &lt;commit_id&gt;</span><br></pre></td></tr></table></figure>
+<h4 id="刪除檔案"><a href="#刪除檔案" class="headerlink" title="刪除檔案"></a>刪除檔案</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ git rm &lt;file&gt;</span><br><span class="line">$ git add -u</span><br></pre></td></tr></table></figure>
+<h4 id="搬移檔案"><a href="#搬移檔案" class="headerlink" title="搬移檔案"></a>搬移檔案</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git mv &lt;file&gt; &lt;directory&gt;</span><br></pre></td></tr></table></figure>
+<h4 id="重新命名檔案"><a href="#重新命名檔案" class="headerlink" title="重新命名檔案"></a>重新命名檔案</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git mv &lt;file&gt; &lt;new_name&gt;</span><br></pre></td></tr></table></figure>
+<h4 id="檔案狀態"><a href="#檔案狀態" class="headerlink" title="檔案狀態"></a>檔案狀態</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ git reset HEAD</span><br><span class="line">$ git reset HEAD &lt;file&gt;</span><br><span class="line">$ git checkout -- &lt;file&gt;</span><br></pre></td></tr></table></figure>
+<h4 id="檔案還原"><a href="#檔案還原" class="headerlink" title="檔案還原"></a>檔案還原</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ git checkout -- &lt;file&gt;</span><br><span class="line">$ git reset HEAD</span><br><span class="line">$ git reset HEAD &lt;file&gt;</span><br><span class="line">$ git reset --hard HEAD</span><br></pre></td></tr></table></figure>
+<h4 id="忽略檔案-gitignore"><a href="#忽略檔案-gitignore" class="headerlink" title="忽略檔案 .gitignore"></a>忽略檔案 <code>.gitignore</code></h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git add -f &lt;file&gt;</span><br></pre></td></tr></table></figure>
+<h4 id="提交空白Patch"><a href="#提交空白Patch" class="headerlink" title="提交空白Patch"></a>提交空白Patch</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git commit --allow-empty -m <span class="string">"空的"</span></span><br></pre></td></tr></table></figure>
+<h3 id="Patch篇"><a href="#Patch篇" class="headerlink" title="Patch篇"></a>Patch篇</h3><h4 id="基本觀念"><a href="#基本觀念" class="headerlink" title="基本觀念"></a>基本觀念</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git <span class="built_in">log</span> --pretty=raw</span><br></pre></td></tr></table></figure>
+<h4 id="關鍵字-HEAD"><a href="#關鍵字-HEAD" class="headerlink" title="關鍵字 HEAD"></a>關鍵字 HEAD</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ git show HEAD^</span><br><span class="line">$ git show HEAD~3</span><br></pre></td></tr></table></figure>
+<h4 id="Reset-Patch"><a href="#Reset-Patch" class="headerlink" title="Reset Patch"></a>Reset Patch</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ git <span class="built_in">log</span> --oneline</span><br><span class="line">$ git reset HEAD^</span><br><span class="line">$ git reset --hard HEAD^</span><br><span class="line">$ git reset --hard &lt;commit id&gt;</span><br></pre></td></tr></table></figure>
+<h4 id="找回消失的-Patch"><a href="#找回消失的-Patch" class="headerlink" title="找回消失的 Patch"></a>找回消失的 Patch</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ git reflog</span><br><span class="line">$ git <span class="built_in">log</span> -g</span><br></pre></td></tr></table></figure>
+<h4 id="修改-訂正-Patch"><a href="#修改-訂正-Patch" class="headerlink" title="修改 / 訂正 Patch"></a>修改 / 訂正 Patch</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ git commit --amend</span><br><span class="line">$ git commit --amend -m &lt;message&gt;</span><br><span class="line">$ git reset --soft HEAD^</span><br><span class="line">$ git reset --soft HEAD@&#123;1&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="移除單一個-Patch"><a href="#移除單一個-Patch" class="headerlink" title="移除單一個 Patch"></a>移除單一個 Patch</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git cherry-pick &lt;commit id&gt;</span><br></pre></td></tr></table></figure>
+<h4 id="Rebase-互動模式"><a href="#Rebase-互動模式" class="headerlink" title="Rebase 互動模式"></a>Rebase 互動模式</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git rebase -i &lt;after this commit&gt;</span><br></pre></td></tr></table></figure>
+<h4 id="Cherry-Pick-版本衝突"><a href="#Cherry-Pick-版本衝突" class="headerlink" title="Cherry-Pick 版本衝突"></a>Cherry-Pick 版本衝突</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ git cherry-pick --<span class="built_in">continue</span></span><br><span class="line">$ git cherry-pick --abort</span><br></pre></td></tr></table></figure>
+<h4 id="Rebase-版本衝突"><a href="#Rebase-版本衝突" class="headerlink" title="Rebase 版本衝突"></a>Rebase 版本衝突</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ git rebase --<span class="built_in">continue</span></span><br><span class="line">$ git rebase --skip</span><br><span class="line">$ git rebase --abort</span><br></pre></td></tr></table></figure>
+<h4 id="Revert-Patch"><a href="#Revert-Patch" class="headerlink" title="Revert Patch"></a>Revert Patch</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ git revert &lt;commit id&gt;</span><br><span class="line">$ git revert --<span class="built_in">continue</span></span><br><span class="line">$ git revert --abort</span><br></pre></td></tr></table></figure>
+<h3 id="分支篇"><a href="#分支篇" class="headerlink" title="分支篇"></a>分支篇</h3><h4 id="查看分支"><a href="#查看分支" class="headerlink" title="查看分支"></a>查看分支</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ git branch</span><br><span class="line">$ gitk --all &amp;</span><br></pre></td></tr></table></figure>
+<h4 id="建立-刪除分支"><a href="#建立-刪除分支" class="headerlink" title="建立 / 刪除分支"></a>建立 / 刪除分支</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">$ git branch &lt;new branch name&gt;</span><br><span class="line">$ git checkout &lt;branch name&gt;</span><br><span class="line">$ git checkout -b &lt;new branch name&gt;</span><br><span class="line">$ git branch -f &lt;branch name&gt; &lt;commit id&gt;</span><br><span class="line">$ git branch -D &lt;branch name&gt;</span><br><span class="line">$ git <span class="built_in">log</span> &lt;branch name&gt;</span><br></pre></td></tr></table></figure>
+<h4 id="Commit-Tree"><a href="#Commit-Tree" class="headerlink" title="Commit Tree"></a>Commit Tree</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ git checkout &lt;commit id&gt;</span><br><span class="line">$ git checkout -b &lt;new branch name&gt; &lt;commit id&gt;</span><br></pre></td></tr></table></figure>
+<h4 id="Rebase-合併分支"><a href="#Rebase-合併分支" class="headerlink" title="Rebase 合併分支"></a>Rebase 合併分支</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ git cherry-pick &lt;commit 1&gt; &lt;commit 2&gt; ...</span><br><span class="line">$ git rebase &lt;new base&gt;</span><br><span class="line">$ git rebase &lt;new base&gt; &lt;branch name&gt;</span><br><span class="line">$ git reset --hard ORIG_HEAD</span><br></pre></td></tr></table></figure>
+<h4 id="Merge-合併分支"><a href="#Merge-合併分支" class="headerlink" title="Merge 合併分支"></a>Merge 合併分支</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ git merge &lt;branch name&gt;</span><br><span class="line">$ git merge --no-ff &lt;branch name&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="遠端篇"><a href="#遠端篇" class="headerlink" title="遠端篇"></a>遠端篇</h3><h4 id="新增專案"><a href="#新增專案" class="headerlink" title="新增專案"></a>新增專案</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -t rsa</span><br><span class="line">ssh -T git@github.com</span><br></pre></td></tr></table></figure>
+<h4 id="設定-Repo-URL"><a href="#設定-Repo-URL" class="headerlink" title="設定 Repo URL"></a>設定 Repo URL</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ git remote -v</span><br><span class="line">$ git remote add &lt;short name&gt; &lt;repo url&gt;</span><br><span class="line">$ git remote rm &lt;short name&gt;</span><br><span class="line">$ git remote rename &lt;short name&gt; &lt;new name&gt;</span><br></pre></td></tr></table></figure>
+<h4 id="上傳分支"><a href="#上傳分支" class="headerlink" title="上傳分支"></a>上傳分支</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ git branch -a</span><br><span class="line">$ git push &lt;remote name&gt; &lt;branch name&gt;</span><br></pre></td></tr></table></figure>
+<h4 id="設定-Upstream"><a href="#設定-Upstream" class="headerlink" title="設定 Upstream"></a>設定 Upstream</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ git push -u &lt;remote name&gt; &lt;branch name&gt;</span><br><span class="line">$ git branch -u &lt;remote&gt;/&lt;remote branch&gt;</span><br><span class="line">$ git branch --<span class="built_in">unset</span>-upstream</span><br></pre></td></tr></table></figure>
+<h4 id="複製-下載專案"><a href="#複製-下載專案" class="headerlink" title="複製 / 下載專案"></a>複製 / 下載專案</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ git <span class="built_in">clone</span> &lt;repo URL&gt;</span><br><span class="line">$ git <span class="built_in">clone</span> &lt;repo URL&gt; -b &lt;branch name&gt;</span><br><span class="line">$ git <span class="built_in">clone</span> &lt;repo URL&gt; &lt;folder name/path&gt;</span><br><span class="line">$ git <span class="built_in">clone</span> &lt;<span class="built_in">local</span> project&gt;</span><br></pre></td></tr></table></figure>
+<h4 id="同步遠端分支"><a href="#同步遠端分支" class="headerlink" title="同步遠端分支"></a>同步遠端分支</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$ git fetch &lt;remote name&gt;</span><br><span class="line">$ git fetch --all</span><br><span class="line">$ git remote update</span><br><span class="line">$ git pull</span><br><span class="line">$ git pull --rebase</span><br></pre></td></tr></table></figure>
+<h4 id="強制更新遠端分支"><a href="#強制更新遠端分支" class="headerlink" title="強制更新遠端分支"></a>強制更新遠端分支</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git push -f</span><br></pre></td></tr></table></figure>
+<h4 id="刪除遠端分支"><a href="#刪除遠端分支" class="headerlink" title="刪除遠端分支"></a>刪除遠端分支</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">$ git push &lt;remote name&gt; :&lt;branch name&gt;</span><br><span class="line">$ git remote show &lt;remote name&gt;</span><br><span class="line">$ git remote prune &lt;remote name&gt;</span><br><span class="line">$ git remote update -p</span><br><span class="line">$ git fetch --all -p</span><br><span class="line">$ git fetch -p</span><br></pre></td></tr></table></figure>
+<h3 id="進階篇"><a href="#進階篇" class="headerlink" title="進階篇"></a>進階篇</h3><h4 id="檔案暫存"><a href="#檔案暫存" class="headerlink" title="檔案暫存"></a>檔案暫存</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">$ git stash</span><br><span class="line">$ git stash list</span><br><span class="line">$ git stash pop</span><br><span class="line">$ git stash pop stash@&#123;n&#125;</span><br><span class="line">$ git stash drop</span><br><span class="line">$ git stash drop stash@&#123;n&#125;</span><br><span class="line">$ git stash clear</span><br></pre></td></tr></table></figure>
+<h4 id="Add-Checkout-檔案部分內容"><a href="#Add-Checkout-檔案部分內容" class="headerlink" title="Add / Checkout 檔案部分內容"></a>Add / Checkout 檔案部分內容</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ git add -p</span><br><span class="line">$ git checkout -p</span><br></pre></td></tr></table></figure>
+<h4 id="版本標籤"><a href="#版本標籤" class="headerlink" title="版本標籤"></a>版本標籤</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">$ git tag</span><br><span class="line">$ git tag &lt;tag name&gt; &lt;commit id&gt;</span><br><span class="line">$ git tag -a &lt;tag name&gt; &lt;commit id&gt;</span><br><span class="line">$ git tag -a &lt;tag name&gt; &lt;commit id&gt; -m &lt;msg1&gt; -m &lt;msg2&gt;</span><br><span class="line">$ git tag -a &lt;tag name&gt; &lt;tag name&gt;^&#123;&#125; -f</span><br><span class="line">$ git tag -d &lt;tag name&gt;</span><br><span class="line"></span><br><span class="line">$ git push &lt;remote name&gt; &lt;tag name&gt;</span><br><span class="line">$ git push &lt;remote name&gt; --tags</span><br><span class="line">$ git push &lt;remote name&gt; :&lt;tag name&gt;</span><br><span class="line">$ git push -f &lt;remote name&gt; &lt;tag name&gt;</span><br></pre></td></tr></table></figure>
+<h4 id="子模組"><a href="#子模組" class="headerlink" title="子模組"></a>子模組</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ git submodule init</span><br><span class="line">$ git submodule update</span><br><span class="line">$ git submodule add &lt;repo url&gt; &lt;project path&gt;</span><br><span class="line">$ git <span class="built_in">clone</span> --recursive &lt;repo URL&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="心得"><a href="#心得" class="headerlink" title="心得"></a>心得</h3><p>每次<code>git commit</code>都會產生一個Patch，</p>
+<p><code>git rebase</code> 整理Patch會改變Hush值</p>
+<p><code>git reset</code> <a href="https://git-scm.com/book/en/v2/Git-Tools-Reset-Demystified" target="_blank" rel="noopener">https://git-scm.com/book/en/v2/Git-Tools-Reset-Demystified</a>.</p>
+<ul>
+<li>移動HEAD分支的指向 <code>git reset --soft</code><blockquote>
+<p>只是移動HEAD</p>
+</blockquote>
+</li>
+<li>使索引看起來像HEAD <code>git reset --mixed</code><blockquote>
+<p>移動HEAD，還原Stage區</p>
+</blockquote>
+</li>
+<li>使工作目錄看起來像索引 <code>git reset --hard</code><blockquote>
+<p>移動HEAD，….還原工作目錄</p>
+</blockquote>
+</li>
+</ul>
+
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Git/" rel="tag"># Git</a>
+          
+            <a href="/tags/tools/" rel="tag"># tools</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/php-tips/" rel="next" title="PHP 小技巧">
+                <i class="fa fa-chevron-left"></i> PHP 小技巧
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/laravel-package-debugbar/" rel="prev" title="Laravel套件：Debugbar">
+                Laravel套件：Debugbar <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">YuWin</p>
+              <p class="site-description motion-element" itemprop="description">PHPer</p>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">7</span>
+                    <span class="site-state-item-name">posts</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  <a href="/categories/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">7</span>
+                    <span class="site-state-item-name">categories</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  <a href="/tags/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">10</span>
+                    <span class="site-state-item-name">tags</span>
+                  </a>
+                </div>
+              
+            </nav>
+          
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+            
+          
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#安裝篇"><span class="nav-number">1.</span> <span class="nav-text">安裝篇</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#下載Git"><span class="nav-number">1.1.</span> <span class="nav-text">下載Git</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#設定篇"><span class="nav-number">2.</span> <span class="nav-text">設定篇</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#建立目錄讓Git管理"><span class="nav-number">2.1.</span> <span class="nav-text">建立目錄讓Git管理</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#設定ssh-key"><span class="nav-number">2.2.</span> <span class="nav-text">設定ssh key</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#查看ssh-key"><span class="nav-number">2.2.1.</span> <span class="nav-text">查看ssh key</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#產生ssh-key"><span class="nav-number">2.2.2.</span> <span class="nav-text">產生ssh key</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#複製ssh-key"><span class="nav-number">2.2.3.</span> <span class="nav-text">複製ssh key</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#測試ssh"><span class="nav-number">2.2.4.</span> <span class="nav-text">測試ssh</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#使用者設定"><span class="nav-number">2.3.</span> <span class="nav-text">使用者設定</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#進階用法：不同的專案設定不同的作者"><span class="nav-number">2.4.</span> <span class="nav-text">進階用法：不同的專案設定不同的作者</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#更換編輯器-vim-gt-emacs"><span class="nav-number">2.5.</span> <span class="nav-text">更換編輯器: vim -&gt; emacs</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#自訂指令-Alias-別名"><span class="nav-number">2.6.</span> <span class="nav-text">自訂指令:Alias 別名</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#基礎篇"><span class="nav-number">3.</span> <span class="nav-text">基礎篇</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#建立-Git-專案"><span class="nav-number">3.1.</span> <span class="nav-text">建立 Git 專案</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#提交一個-Patch"><span class="nav-number">3.2.</span> <span class="nav-text">提交一個 Patch</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#新增-修改檔案"><span class="nav-number">3.3.</span> <span class="nav-text">新增 / 修改檔案</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#刪除檔案"><span class="nav-number">3.4.</span> <span class="nav-text">刪除檔案</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#搬移檔案"><span class="nav-number">3.5.</span> <span class="nav-text">搬移檔案</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#重新命名檔案"><span class="nav-number">3.6.</span> <span class="nav-text">重新命名檔案</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#檔案狀態"><span class="nav-number">3.7.</span> <span class="nav-text">檔案狀態</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#檔案還原"><span class="nav-number">3.8.</span> <span class="nav-text">檔案還原</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#忽略檔案-gitignore"><span class="nav-number">3.9.</span> <span class="nav-text">忽略檔案 .gitignore</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#提交空白Patch"><span class="nav-number">3.10.</span> <span class="nav-text">提交空白Patch</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Patch篇"><span class="nav-number">4.</span> <span class="nav-text">Patch篇</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#基本觀念"><span class="nav-number">4.1.</span> <span class="nav-text">基本觀念</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#關鍵字-HEAD"><span class="nav-number">4.2.</span> <span class="nav-text">關鍵字 HEAD</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Reset-Patch"><span class="nav-number">4.3.</span> <span class="nav-text">Reset Patch</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#找回消失的-Patch"><span class="nav-number">4.4.</span> <span class="nav-text">找回消失的 Patch</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#修改-訂正-Patch"><span class="nav-number">4.5.</span> <span class="nav-text">修改 / 訂正 Patch</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#移除單一個-Patch"><span class="nav-number">4.6.</span> <span class="nav-text">移除單一個 Patch</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Rebase-互動模式"><span class="nav-number">4.7.</span> <span class="nav-text">Rebase 互動模式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Cherry-Pick-版本衝突"><span class="nav-number">4.8.</span> <span class="nav-text">Cherry-Pick 版本衝突</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Rebase-版本衝突"><span class="nav-number">4.9.</span> <span class="nav-text">Rebase 版本衝突</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Revert-Patch"><span class="nav-number">4.10.</span> <span class="nav-text">Revert Patch</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#分支篇"><span class="nav-number">5.</span> <span class="nav-text">分支篇</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#查看分支"><span class="nav-number">5.1.</span> <span class="nav-text">查看分支</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#建立-刪除分支"><span class="nav-number">5.2.</span> <span class="nav-text">建立 / 刪除分支</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Commit-Tree"><span class="nav-number">5.3.</span> <span class="nav-text">Commit Tree</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Rebase-合併分支"><span class="nav-number">5.4.</span> <span class="nav-text">Rebase 合併分支</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Merge-合併分支"><span class="nav-number">5.5.</span> <span class="nav-text">Merge 合併分支</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#遠端篇"><span class="nav-number">6.</span> <span class="nav-text">遠端篇</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#新增專案"><span class="nav-number">6.1.</span> <span class="nav-text">新增專案</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#設定-Repo-URL"><span class="nav-number">6.2.</span> <span class="nav-text">設定 Repo URL</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#上傳分支"><span class="nav-number">6.3.</span> <span class="nav-text">上傳分支</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#設定-Upstream"><span class="nav-number">6.4.</span> <span class="nav-text">設定 Upstream</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#複製-下載專案"><span class="nav-number">6.5.</span> <span class="nav-text">複製 / 下載專案</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#同步遠端分支"><span class="nav-number">6.6.</span> <span class="nav-text">同步遠端分支</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#強制更新遠端分支"><span class="nav-number">6.7.</span> <span class="nav-text">強制更新遠端分支</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#刪除遠端分支"><span class="nav-number">6.8.</span> <span class="nav-text">刪除遠端分支</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#進階篇"><span class="nav-number">7.</span> <span class="nav-text">進階篇</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#檔案暫存"><span class="nav-number">7.1.</span> <span class="nav-text">檔案暫存</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Add-Checkout-檔案部分內容"><span class="nav-number">7.2.</span> <span class="nav-text">Add / Checkout 檔案部分內容</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#版本標籤"><span class="nav-number">7.3.</span> <span class="nav-text">版本標籤</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#子模組"><span class="nav-number">7.4.</span> <span class="nav-text">子模組</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#心得"><span class="nav-number">8.</span> <span class="nav-text">心得</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">YuWin</span>
+
+  
+
+  
+</div>
+
+
+
+
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> v3.7.1</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://theme-next.org">NexT.Gemini</a> v6.3.0</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=6.3.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=6.3.0"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=6.3.0"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=6.3.0"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.3.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=6.3.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.3.0"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
