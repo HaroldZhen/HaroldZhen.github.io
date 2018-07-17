@@ -350,7 +350,7 @@
                 
               
 
-              <time title="Created: 2018-07-17 19:56:11 / Modified: 20:10:23" itemprop="dateCreated datePublished" datetime="2018-07-17T19:56:11+08:00">2018-07-17</time>
+              <time title="Created: 2018-07-17 19:56:11 / Modified: 20:12:36" itemprop="dateCreated datePublished" datetime="2018-07-17T19:56:11+08:00">2018-07-17</time>
             
 
             
@@ -414,18 +414,14 @@
 
       
         
-          
-            <h1 id="Git小技巧"><a href="#Git小技巧" class="headerlink" title="Git小技巧"></a>Git小技巧</h1><h3 id="如何同時推二個不同的儲存庫-Repository"><a href="#如何同時推二個不同的儲存庫-Repository" class="headerlink" title="如何同時推二個不同的儲存庫(Repository)"></a><strong>如何同時推二個不同的儲存庫(Repository)</strong></h3><p>由於在家工作需要打VPN到公司來，很不方便。<br>所以在公司推專案到GitLab的時候，同時推到自己的Dropbox，這樣在家就可以從Dropbox存取專案，完成工作之後，到公司再從Dropbox下載專案推到公司的GitLab。</p>
-<ol>
-<li>公司：GitLab    ===pull====&gt; me ===push===&gt; GitLab &amp; Dropbox</li>
-<li>宿舍：Dropbox ===pull====&gt; me ===push===&gt; Dropbox</li>
-<li>公司：Dropbox ===pull====&gt; me ===push===&gt; GitLab &amp; Dropbox</li>
-</ol>
-<p>一開始：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git remote add origin git://original/repo.git</span><br></pre></td></tr></table></figure></p>
-<p>然後加上這段指令，就可以推送<code>origin</code>的同時推送其他<strong>儲存庫(Repository)</strong>。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git remote <span class="built_in">set</span>-url --add --push origin git://original/repo.git</span><br></pre></td></tr></table></figure></p>
-<p>查看<code>remote</code><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git remote -v</span><br></pre></td></tr></table></figure></p>
-
-          
+          <h1 id="Git小技巧"><a href="#Git小技巧" class="headerlink" title="Git小技巧"></a>Git小技巧</h1><h3 id="如何同時推二個不同的儲存庫-Repository"><a href="#如何同時推二個不同的儲存庫-Repository" class="headerlink" title="如何同時推二個不同的儲存庫(Repository)"></a><strong>如何同時推二個不同的儲存庫(Repository)</strong></h3><p>由於在家工作需要打VPN到公司來，很不方便。<br>所以在公司推專案到GitLab的時候，同時推到自己的Dropbox，這樣在家就可以從Dropbox存取專案，完成工作之後，到公司再從Dropbox下載專案推到公司的GitLab。</p>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/git-tips/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
