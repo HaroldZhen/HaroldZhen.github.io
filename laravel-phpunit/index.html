@@ -108,25 +108,25 @@
 
 
 
-  <meta name="description" content="Git小技巧如何同時推二個不同的儲存庫(Repository)由於在家工作需要打VPN到公司來，很不方便。所以在公司推專案到GitLab的時候，同時推到自己的Dropbox，這樣在家就可以從Dropbox存取專案，完成工作之後，到公司再從Dropbox下載專案推到公司的GitLab。">
-<meta name="keywords" content="Git,tools,tips">
+  <meta name="description" content="Laravel專案中寫測試，遇到怎樣都沒辦法Mock其他物件，原因可能是這個物件早就被實現了。 1234567891011121314151617181920212223242526272829303132class ComboCategoryServiceTest extends TestCase&amp;#123;    private $combo;    private $service;">
+<meta name="keywords" content="laravel,phpunit">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Git小技巧">
-<meta property="og:url" content="http://yoursite.com/git-tips/index.html">
+<meta property="og:title" content="Laravel-PHPUnit沒辦法Mock物件">
+<meta property="og:url" content="http://yoursite.com/laravel-phpunit/index.html">
 <meta property="og:site_name" content="WuLaLa Note">
-<meta property="og:description" content="Git小技巧如何同時推二個不同的儲存庫(Repository)由於在家工作需要打VPN到公司來，很不方便。所以在公司推專案到GitLab的時候，同時推到自己的Dropbox，這樣在家就可以從Dropbox存取專案，完成工作之後，到公司再從Dropbox下載專案推到公司的GitLab。">
+<meta property="og:description" content="Laravel專案中寫測試，遇到怎樣都沒辦法Mock其他物件，原因可能是這個物件早就被實現了。 1234567891011121314151617181920212223242526272829303132class ComboCategoryServiceTest extends TestCase&amp;#123;    private $combo;    private $service;">
 <meta property="og:locale" content="zh-tw">
-<meta property="og:updated_time" content="2018-07-17T12:12:36.000Z">
+<meta property="og:updated_time" content="2018-07-25T09:33:55.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Git小技巧">
-<meta name="twitter:description" content="Git小技巧如何同時推二個不同的儲存庫(Repository)由於在家工作需要打VPN到公司來，很不方便。所以在公司推專案到GitLab的時候，同時推到自己的Dropbox，這樣在家就可以從Dropbox存取專案，完成工作之後，到公司再從Dropbox下載專案推到公司的GitLab。">
+<meta name="twitter:title" content="Laravel-PHPUnit沒辦法Mock物件">
+<meta name="twitter:description" content="Laravel專案中寫測試，遇到怎樣都沒辦法Mock其他物件，原因可能是這個物件早就被實現了。 1234567891011121314151617181920212223242526272829303132class ComboCategoryServiceTest extends TestCase&amp;#123;    private $combo;    private $service;">
 
 
 
 
 
 
-  <link rel="canonical" href="http://yoursite.com/git-tips/"/>
+  <link rel="canonical" href="http://yoursite.com/laravel-phpunit/"/>
 
 
 
@@ -136,7 +136,7 @@
   };
 </script>
 
-  <title>Git小技巧 | WuLaLa Note</title>
+  <title>Laravel-PHPUnit沒辦法Mock物件 | WuLaLa Note</title>
   
 
 
@@ -305,7 +305,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/git-tips/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/laravel-phpunit/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="YuWin">
@@ -322,7 +322,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Git小技巧
+          <h1 class="post-title" itemprop="name headline">Laravel-PHPUnit沒辦法Mock物件
               
             
           </h1>
@@ -347,7 +347,7 @@
                 
               
 
-              <time title="Created: 2018-07-17 19:56:11 / Modified: 20:12:36" itemprop="dateCreated datePublished" datetime="2018-07-17T19:56:11+08:00">2018-07-17</time>
+              <time title="Created: 2018-07-25 17:14:18 / Modified: 17:33:55" itemprop="dateCreated datePublished" datetime="2018-07-25T17:14:18+08:00">2018-07-25</time>
             
 
             
@@ -369,14 +369,21 @@
                 <span class="post-meta-item-text">In</span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/工具/" itemprop="url" rel="index"><span itemprop="name">工具</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/後端/" itemprop="url" rel="index"><span itemprop="name">後端</span></a></span>
 
                 
                 
                   , 
                 
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/工具/Local/" itemprop="url" rel="index"><span itemprop="name">Local</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/後端/PHP/" itemprop="url" rel="index"><span itemprop="name">PHP</span></a></span>
+
+                
+                
+                  , 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/後端/PHP/Laravel/" itemprop="url" rel="index"><span itemprop="name">Laravel</span></a></span>
 
                 
                 
@@ -410,16 +417,18 @@
       
 
       
-        <h1 id="Git小技巧"><a href="#Git小技巧" class="headerlink" title="Git小技巧"></a>Git小技巧</h1><h3 id="如何同時推二個不同的儲存庫-Repository"><a href="#如何同時推二個不同的儲存庫-Repository" class="headerlink" title="如何同時推二個不同的儲存庫(Repository)"></a><strong>如何同時推二個不同的儲存庫(Repository)</strong></h3><p>由於在家工作需要打VPN到公司來，很不方便。<br>所以在公司推專案到GitLab的時候，同時推到自己的Dropbox，這樣在家就可以從Dropbox存取專案，完成工作之後，到公司再從Dropbox下載專案推到公司的GitLab。</p>
-<a id="more"></a>
-<ol>
-<li>公司：GitLab    ===pull====&gt; me ===push===&gt; GitLab &amp; Dropbox</li>
-<li>宿舍：Dropbox ===pull====&gt; me ===push===&gt; Dropbox</li>
-<li>公司：Dropbox ===pull====&gt; me ===push===&gt; GitLab &amp; Dropbox</li>
-</ol>
-<p>一開始：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git remote add origin git://original/repo.git</span><br></pre></td></tr></table></figure></p>
-<p>然後加上這段指令，就可以推送<code>origin</code>的同時推送其他<strong>儲存庫(Repository)</strong>。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git remote <span class="built_in">set</span>-url --add --push origin git://original/repo.git</span><br></pre></td></tr></table></figure></p>
-<p>查看<code>remote</code><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git remote -v</span><br></pre></td></tr></table></figure></p>
+        <p>Laravel專案中寫測試，遇到怎樣都沒辦法<code>Mock</code>其他物件，原因可能是這個物件早就被實現了。</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">ComboCategoryServiceTest</span> <span class="keyword">extends</span> <span class="title">TestCase</span></span></span><br><span class="line"><span class="class"></span>&#123;</span><br><span class="line">    <span class="keyword">private</span> $combo;</span><br><span class="line">    <span class="keyword">private</span> $service;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">setUp</span><span class="params">()</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="keyword">parent</span>::setUp();</span><br><span class="line">        <span class="keyword">$this</span>-&gt;combo  = factory(ComboCategory::class)-&gt;create([<span class="string">'id'</span> =&gt; <span class="number">1</span>]);</span><br><span class="line">        <span class="keyword">$this</span>-&gt;service = app()-&gt;make(\App\Services\ComboCategoryService::class);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">testSearchByFrontForCombo</span><span class="params">()</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        $mockHotel = Mockery::mock(\App\Repositories\HotelRepository::class);</span><br><span class="line">        <span class="keyword">$this</span>-&gt;app-&gt;instance(\App\Repositories\HotelRepository::class, $mockHotel);</span><br><span class="line">        $mockHotel-&gt;shouldReceive(<span class="string">'findByDomainOrFail'</span>)</span><br><span class="line">            -&gt;andReturn((object)[<span class="string">'id'</span> =&gt; <span class="number">2</span>])</span><br><span class="line">            -&gt;once();</span><br><span class="line"></span><br><span class="line">        <span class="comment">//Mock其他物件之後，再make 一次</span></span><br><span class="line">        <span class="comment">// $this-&gt;service = app()-&gt;make(ComboCategoryService::class);</span></span><br><span class="line"></span><br><span class="line">        $inputs = [</span><br><span class="line">            <span class="string">'domain'</span> =&gt; get_domain(),</span><br><span class="line">            <span class="string">'combo_category'</span> =&gt; <span class="keyword">$this</span>-&gt;combo-&gt;id</span><br><span class="line">        ];</span><br><span class="line"></span><br><span class="line">        $result = <span class="keyword">$this</span>-&gt;service-&gt;searchByFrontForCombo($inputs);</span><br><span class="line">        <span class="keyword">$this</span>-&gt;assertEquals(<span class="keyword">$this</span>-&gt;combo-&gt;id, $result-&gt;first()-&gt;id);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>這個<code>function</code>會呼叫<code>findByDomainOrFail</code>，但是在這裡執行的時候，其實他都沒有被<code>Mock</code></p>
+</blockquote>
+<blockquote>
+<p>這是因為早在<code>setUp</code>早就實現<code>ComboCategoryService:class</code>，此建構子又實現<code>HotelRepository::class</code></p>
+</blockquote>
+<blockquote>
+<p>在這之後怎麼<code>Mock</code>,<code>instance</code>都沒有用。</p>
+</blockquote>
+<h2 id="結論-要在呼叫之前就Mock-instance，或是再實現一次方法。"><a href="#結論-要在呼叫之前就Mock-instance，或是再實現一次方法。" class="headerlink" title="結論:要在呼叫之前就Mock,instance，或是再實現一次方法。"></a>結論:要在呼叫之前就<code>Mock</code>,<code>instance</code>，或是再實現一次方法。</h2><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">$this</span>-&gt;service = app()-&gt;make(ComboCategoryService::class);</span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -440,11 +449,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/Git/" rel="tag"># Git</a>
+            <a href="/tags/laravel/" rel="tag"># laravel</a>
           
-            <a href="/tags/tools/" rel="tag"># tools</a>
-          
-            <a href="/tags/tips/" rel="tag"># tips</a>
+            <a href="/tags/phpunit/" rel="tag"># phpunit</a>
           
         </div>
       
@@ -457,8 +464,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/laravel-package-debugbar/" rel="next" title="Laravel套件：Debugbar">
-                <i class="fa fa-chevron-left"></i> Laravel套件：Debugbar
+              <a href="/git-tips/" rel="next" title="Git小技巧">
+                <i class="fa fa-chevron-left"></i> Git小技巧
               </a>
             
           </div>
@@ -467,8 +474,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/laravel-phpunit/" rel="prev" title="Laravel-PHPUnit沒辦法Mock物件">
-                Laravel-PHPUnit沒辦法Mock物件 <i class="fa fa-chevron-right"></i>
+              <a href="/composer-version/" rel="prev" title="composer-version版本">
+                composer-version版本 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -641,7 +648,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Git小技巧"><span class="nav-number">1.</span> <span class="nav-text">Git小技巧</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#如何同時推二個不同的儲存庫-Repository"><span class="nav-number">1.0.1.</span> <span class="nav-text">如何同時推二個不同的儲存庫(Repository)</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#結論-要在呼叫之前就Mock-instance，或是再實現一次方法。"><span class="nav-number">1.</span> <span class="nav-text">結論:要在呼叫之前就Mock,instance，或是再實現一次方法。</span></a></li></ol></div>
             
 
           </div>
